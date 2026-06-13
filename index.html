@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatiana ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Poppins;
+color:white;
+}
+
+/* fondo luz */
+.glow{
+position:absolute;
+width:600px;
+height:600px;
+background:#ff3b7a;
+filter:blur(220px);
+opacity:.18;
+border-radius:50%;
+}
+
+/* SOBRE */
+.envelope{
+position:relative;
+width:260px;
+height:180px;
+background:#ff3b7a;
+cursor:pointer;
+transform:scale(1);
+transition:1s;
+box-shadow:0 0 40px rgba(255,0,100,.4);
+}
+
+.envelope:before,
+.envelope:after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+border-style:solid;
+}
+
+.envelope:before{
+border-width:0 130px 90px 130px;
+border-color:transparent transparent #ff5c93 transparent;
+top:0;
+left:0;
+}
+
+.envelope:after{
+border-width:90px 130px 0 130px;
+border-color:#ff2e6e transparent transparent transparent;
+bottom:0;
+left:0;
+}
+
+/* CARTA */
+.letter{
+position:absolute;
+width:320px;
+max-height:420px;
+background:rgba(255,255,255,0.95);
+color:#111;
+padding:25px;
+border-radius:12px;
+transform:translateY(40px);
+opacity:0;
+transition:1.5s;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+/* estado abierto */
+.open .envelope{
+transform:scale(0.8) translateY(-120px);
+opacity:0;
+}
+
+.open .letter{
+transform:translateY(-40px);
+opacity:1;
+}
+
+/* texto */
+.title{
+font-family:'Great Vibes';
+font-size:2.5rem;
+color:#ff2e6e;
+text-align:center;
+margin-bottom:10px;
+}
+
+.poem{
+font-size:0.95rem;
+line-height:1.5;
+text-align:center;
+opacity:.9;
+}
+
+/* botón */
+.btn{
+margin-top:15px;
+display:block;
+padding:12px;
+border:none;
+border-radius:25px;
+background:#ff2e6e;
+color:white;
+font-weight:bold;
+cursor:pointer;
+width:100%;
+}
+
+/* corazones */
+.heart{
+position:absolute;
+color:#ff3b7a;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0); opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-120vh); opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div id="scene">
+
+<!-- SOBRE -->
+<div class="envelope" onclick="openLetter()"></div>
+
+<!-- CARTA -->
+<div class="letter">
+<div class="title">Tatiana</div>
+
+<div class="poem">
+
+Tatiana,<br><br>
+
+No eres un pensamiento pasajero,<br>
+eres ese lugar donde el ruido se apaga.<br><br>
+
+Hay personas que pasan.<br>
+Y otras que se quedan incluso cuando no están.<br><br>
+
+Tú eres de las que dejan huella sin tocar el suelo.<br><br>
+
+Si el tiempo pudiera elegir,<br>
+se detendría en cosas como tú.<br><br>
+
+❤️
+</div>
+
+<button class="btn" onclick="music()">
+🎵 Escuchar canción
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openLetter(){
+
+document.body.classList.add("open");
+
+for(let i=0;i<60;i++){
+setTimeout(createHeart,i*60);
+}
+
+}
+
+function createHeart(){
+let h=document.createElement("div");
+h.innerHTML="❤";
+h.classList.add("heart");
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(Math.random()*22+10)+"px";
+h.style.animationDuration=(Math.random()*5+3)+"s";
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),9000);
+}
+
+function music(){
+window.open("https://youtu.be/8cKvvmPwgP4","_blank");
+}
+
+setInterval(createHeart,600);
+
+</script>
+
+</body>
+</html>
