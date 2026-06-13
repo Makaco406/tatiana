@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tatiana ❤️</title>
+<title>Para Tatiana ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,7 +13,7 @@ body{
 margin:0;
 height:100vh;
 overflow:hidden;
-background:black;
+background:#0b0b10;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -21,35 +21,46 @@ font-family:Poppins;
 color:white;
 }
 
-/* fondo luz */
+/* glow suave */
 .glow{
 position:absolute;
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 background:#ff3b7a;
-filter:blur(220px);
+filter:blur(240px);
 opacity:.18;
 border-radius:50%;
 }
 
-/* SOBRE */
+/* flores */
+.flower{
+position:absolute;
+font-size:22px;
+animation:floatFlower 8s linear infinite;
+opacity:.8;
+}
+
+@keyframes floatFlower{
+0%{transform:translateY(0) rotate(0); opacity:0;}
+10%{opacity:1;}
+100%{transform:translateY(-120vh) rotate(360deg); opacity:0;}
+}
+
+/* sobre */
 .envelope{
-position:relative;
 width:260px;
 height:180px;
 background:#ff3b7a;
+position:relative;
 cursor:pointer;
-transform:scale(1);
 transition:1s;
-box-shadow:0 0 40px rgba(255,0,100,.4);
+box-shadow:0 0 40px rgba(255,0,100,.3);
 }
 
 .envelope:before,
 .envelope:after{
 content:"";
 position:absolute;
-width:0;
-height:0;
 border-style:solid;
 }
 
@@ -67,25 +78,25 @@ bottom:0;
 left:0;
 }
 
-/* CARTA */
+/* carta */
 .letter{
 position:absolute;
-width:320px;
-max-height:420px;
-background:rgba(255,255,255,0.95);
+width:340px;
+max-height:520px;
+overflow:auto;
+background:white;
 color:#111;
 padding:25px;
 border-radius:12px;
-transform:translateY(40px);
+transform:translateY(50px);
 opacity:0;
-transition:1.5s;
-overflow:hidden;
+transition:1.2s;
 box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
-/* estado abierto */
+/* abrir */
 .open .envelope{
-transform:scale(0.8) translateY(-120px);
+transform:scale(0.7) translateY(-120px);
 opacity:0;
 }
 
@@ -94,47 +105,33 @@ transform:translateY(-40px);
 opacity:1;
 }
 
-/* texto */
+/* título */
 .title{
 font-family:'Great Vibes';
-font-size:2.5rem;
+font-size:2.8rem;
+text-align:center;
 color:#ff2e6e;
-text-align:center;
-margin-bottom:10px;
 }
 
+/* poema */
 .poem{
+margin-top:15px;
 font-size:0.95rem;
-line-height:1.5;
+line-height:1.6;
 text-align:center;
-opacity:.9;
 }
 
-/* botón */
+/* botón play */
 .btn{
-margin-top:15px;
-display:block;
-padding:12px;
+margin-top:20px;
+width:100%;
+padding:14px;
 border:none;
 border-radius:25px;
 background:#ff2e6e;
 color:white;
 font-weight:bold;
 cursor:pointer;
-width:100%;
-}
-
-/* corazones */
-.heart{
-position:absolute;
-color:#ff3b7a;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0); opacity:0;}
-10%{opacity:1;}
-100%{transform:translateY(-120vh); opacity:0;}
 }
 
 </style>
@@ -144,35 +141,60 @@ animation:float 6s linear infinite;
 
 <div class="glow"></div>
 
-<div id="scene">
+<!-- flores alrededor -->
+<div class="flower" style="left:5%">🌸</div>
+<div class="flower" style="left:15%; animation-delay:1s">🌺</div>
+<div class="flower" style="left:25%; animation-delay:2s">🌸</div>
+<div class="flower" style="left:70%; animation-delay:1.5s">🌷</div>
+<div class="flower" style="left:85%; animation-delay:3s">🌺</div>
+<div class="flower" style="left:50%; animation-delay:2.5s">🌸</div>
+
+<div id="container">
 
 <!-- SOBRE -->
 <div class="envelope" onclick="openLetter()"></div>
 
 <!-- CARTA -->
 <div class="letter">
+
 <div class="title">Tatiana</div>
 
 <div class="poem">
 
 Tatiana,<br><br>
 
-No eres un pensamiento pasajero,<br>
-eres ese lugar donde el ruido se apaga.<br><br>
+No sé en qué momento exacto empezaste a significar tanto,<br>
+pero sí sé que ahora eres una de esas presencias que no pesan,<br>
+pero lo cambian todo.<br><br>
 
-Hay personas que pasan.<br>
-Y otras que se quedan incluso cuando no están.<br><br>
+Hay personas que pasan por la vida sin dejar ruido.<br>
+Y hay otras que dejan algo más raro:<br>
+una calma difícil de explicar.<br><br>
 
-Tú eres de las que dejan huella sin tocar el suelo.<br><br>
+Tú eres de esas.<br><br>
 
-Si el tiempo pudiera elegir,<br>
-se detendría en cosas como tú.<br><br>
+No eres un pensamiento que se va,<br>
+eres uno que vuelve sin pedir permiso.<br><br>
+
+Si el mundo fuera más honesto,<br>
+diría que hay cosas que no deberían explicarse,<br>
+solo sentirse.<br><br>
+
+Y tú eres exactamente eso.<br><br>
+
+No prometo eternidades,<br>
+pero sí instantes que valen más que cualquier promesa.<br><br>
+
+Si alguna vez dudas del valor de lo que eres,<br>
+recuerda esto:<br>
+hay alguien que te piensa en silencio,<br>
+con una calma que no se fuerza.<br><br>
 
 ❤️
 </div>
 
-<button class="btn" onclick="music()">
-🎵 Escuchar canción
+<button class="btn" onclick="playMusic()">
+🎵 Reproducir canción
 </button>
 
 </div>
@@ -182,34 +204,33 @@ se detendría en cosas como tú.<br><br>
 <script>
 
 function openLetter(){
-
 document.body.classList.add("open");
 
-for(let i=0;i<60;i++){
+for(let i=0;i<80;i++){
 setTimeout(createHeart,i*60);
 }
-
 }
 
 function createHeart(){
 let h=document.createElement("div");
 h.innerHTML="❤";
-h.classList.add("heart");
+h.style.position="absolute";
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(Math.random()*22+10)+"px";
-h.style.animationDuration=(Math.random()*5+3)+"s";
+h.style.color="#ff3b7a";
+h.style.animation="floatFlower 6s linear forwards";
+
 document.body.appendChild(h);
 
-setTimeout(()=>h.remove(),9000);
+setTimeout(()=>h.remove(),8000);
 }
 
-function music(){
+function playMusic(){
 window.open("https://youtu.be/8cKvvmPwgP4","_blank");
 }
-
-setInterval(createHeart,600);
 
 </script>
 
 </body>
+</html>
 </html>
