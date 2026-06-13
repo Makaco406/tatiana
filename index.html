@@ -3,208 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tatiana ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>El Comienzo de Algo Bonito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 height:100vh;
 overflow:hidden;
-background:#07070c;
+font-family:'Cormorant Garamond', serif;
+background:
+linear-gradient(
+180deg,
+#090b2e 0%,
+#1d2457 45%,
+#ff7b7b 100%);
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Poppins;
-color:#111;
-}
-
-/* fondo vivo */
-.bg-glow{
-position:absolute;
-width:600px;
-height:600px;
-background:#ff2e6e;
-filter:blur(250px);
-opacity:.18;
-border-radius:50%;
-animation:pulse 6s infinite;
-}
-
-@keyframes pulse{
-50%{transform:scale(1.1); opacity:.3;}
-}
-
-/* contenedor centrado perfecto */
-.wrapper{
-width:100%;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-}
-
-/* sobre */
-.envelope{
-width:260px;
-height:180px;
-background:#ff3b7a;
-position:absolute;
-cursor:pointer;
-box-shadow:0 0 40px rgba(255,0,100,.3);
-transition:1s;
-}
-
-.envelope:before,
-.envelope:after{
-content:"";
-position:absolute;
-border-style:solid;
-}
-
-.envelope:before{
-border-width:0 130px 90px 130px;
-border-color:transparent transparent #ff5c93 transparent;
-top:0;
-}
-
-.envelope:after{
-border-width:90px 130px 0 130px;
-border-color:#ff2e6e transparent transparent transparent;
-bottom:0;
-}
-
-/* carta centrada PERFECTA */
-.letter{
-position:absolute;
-width:90%;
-max-width:360px;
-background:rgba(255,255,255,0.96);
-border-radius:14px;
-padding:22px;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-opacity:0;
-transform:scale(0.8);
-transition:1.2s;
-
-box-shadow:0 25px 80px rgba(0,0,0,.6);
-}
-
-/* abrir */
-.open .envelope{
-transform:scale(0.6) translateY(-150px);
-opacity:0;
-}
-
-.open .letter{
-opacity:1;
-transform:scale(1);
-}
-
-/* título */
-.title{
-font-family:'Great Vibes';
-font-size:2.6rem;
-color:#ff2e6e;
-margin-bottom:10px;
-}
-
-/* texto centrado */
-.text{
-font-size:0.95rem;
-line-height:1.6;
-}
-
-/* efecto escritura */
-.type{
-margin-top:15px;
-border-right:2px solid #ff2e6e;
-white-space:nowrap;
-overflow:hidden;
-width:0;
-animation:type 6s steps(60,end) forwards;
-}
-
-@keyframes type{
-to{width:100%;}
-}
-
-/* botón interactivo */
-.btn{
-margin-top:18px;
-padding:12px 22px;
-border:none;
-border-radius:25px;
-background:#ff2e6e;
 color:white;
-font-weight:bold;
-cursor:pointer;
-transition:.2s;
 }
 
-.btn:active{
-transform:scale(0.92);
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
 }
 
-/* flores flotantes */
-.flower{
+.star{
 position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+.container{
+position:relative;
+z-index:2;
+width:90%;
+max-width:900px;
+text-align:center;
+padding:30px;
+animation:fade 1.5s ease;
+}
+
+.chapter{
+display:none;
+}
+
+.chapter.active{
+display:block;
+animation:fade 1s ease;
+}
+
+.small{
+letter-spacing:4px;
 font-size:18px;
-animation:float 10s linear infinite;
 opacity:.8;
 }
 
-@keyframes float{
-0%{transform:translateY(0) rotate(0);}
-100%{transform:translateY(-120vh) rotate(360deg);}
+.title{
+font-size:70px;
+font-weight:600;
+margin-top:20px;
+}
+
+.subtitle{
+font-family:'Dancing Script', cursive;
+font-size:52px;
+color:#ffbfd8;
+margin-bottom:30px;
+}
+
+.text{
+font-size:32px;
+line-height:1.5;
+max-width:700px;
+margin:auto;
+}
+
+.heart{
+font-size:45px;
+color:#ff7cb3;
+margin:25px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.2);
+}
+}
+
+.next{
+margin-top:50px;
+cursor:pointer;
+font-size:22px;
+letter-spacing:4px;
+color:#ffd2e5;
+transition:.3s;
+}
+
+.next:hover{
+transform:scale(1.05);
+}
+
+.final-poem{
+font-size:30px;
+line-height:1.8;
+max-width:800px;
+margin:auto;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="bg-glow"></div>
+<div class="stars" id="stars"></div>
 
-<div class="wrapper">
+<div class="container">
 
-<div id="container">
+<!-- CAPITULO 1 -->
 
-<div class="envelope" onclick="openLetter()"></div>
+<div class="chapter active">
 
-<div class="letter">
+<div class="small">CAPÍTULO I</div>
 
-<div class="title">Tatiana</div>
+<div class="heart">♥</div>
 
-<div class="text">
-Tatiana,<br><br>
+<h1 class="title">El comienzo</h1>
 
-No eres un momento.<br>
-Eres el tipo de presencia que reorganiza el silencio.<br><br>
+<div class="subtitle">de algo bonito</div>
 
-No hace falta entenderte.<br>
-Solo sentir que cuando estás, todo encaja distinto.<br><br>
+<p class="text">
+A veces, las mejores historias empiezan sin que lo planees.<br>
+Sin buscarlo, sin pensarlo...<br>
+simplemente pasa.
+</p>
 
-Hay personas que pasan.<br>
-Y otras que cambian la forma de mirar el mundo.<br><br>
-
-Tú eres de las segundas.
+<div class="next" onclick="nextChapter()">
+TOCA PARA CONTINUAR
 </div>
 
-<div class="type">
-Si el mundo se detuviera ahora, elegiría mirarte.
 </div>
 
-<button class="btn" onclick="music()">🎵 Escuchar canción</button>
+<!-- CAPITULO 2 -->
+
+<div class="chapter">
+
+<div class="small">CAPÍTULO II</div>
+
+<div class="heart">♥</div>
+
+<h1 class="title">Las conversaciones</h1>
+
+<div class="subtitle">que nunca terminan</div>
+
+<p class="text">
+Y de repente, las horas se vuelven minutos.<br>
+Las noches se hacen cortas.<br>
+Y cualquier tema es perfecto si es contigo.
+</p>
+
+<div class="next" onclick="nextChapter()">
+CONTINUAR
+</div>
+
+</div>
+
+<!-- CAPITULO 3 -->
+
+<div class="chapter">
+
+<div class="small">CAPÍTULO III</div>
+
+<div class="heart">♥</div>
+
+<h1 class="title">Coincidir</h1>
+
+<div class="subtitle">era inevitable</div>
+
+<p class="text">
+Entre millones de caminos,<br>
+dos miradas encontraron la misma dirección.<br>
+Y el mundo pareció más bonito.
+</p>
+
+<div class="next" onclick="nextChapter()">
+CONTINUAR
+</div>
+
+</div>
+
+<!-- CAPITULO 4 -->
+
+<div class="chapter">
+
+<div class="small">CAPÍTULO IV</div>
+
+<div class="heart">♥</div>
+
+<h1 class="title">Tu presencia</h1>
+
+<div class="subtitle">es mi lugar favorito</div>
+
+<p class="text">
+No importa dónde estemos.<br>
+Cuando apareces, todo tiene más luz.<br>
+Todo tiene más sentido.
+</p>
+
+<div class="next" onclick="nextChapter()">
+CONTINUAR
+</div>
+
+</div>
+
+<!-- CAPITULO 5 -->
+
+<div class="chapter">
+
+<div class="small">CAPÍTULO V</div>
+
+<div class="heart">♥</div>
+
+<h1 class="title">El futuro</h1>
+
+<div class="subtitle">empieza hoy</div>
+
+<p class="text">
+Porque los grandes "para siempre"<br>
+no empiezan mañana.<br>
+Empiezan en los pequeños momentos de hoy.
+</p>
+
+<div class="next" onclick="nextChapter()">
+VER POEMA FINAL
+</div>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="chapter">
+
+<div class="small">FIN</div>
+
+<div class="heart">♥</div>
+
+<h1 class="title">Poema</h1>
+
+<div class="subtitle">para ti</div>
+
+<div class="final-poem">
+
+No llegaste haciendo ruido,<br>
+llegaste como llegan las cosas bonitas:<br>
+despacio.<br><br>
+
+Y sin darme cuenta,<br>
+te convertiste en la parte favorita<br>
+de mis días.<br><br>
+
+En las palabras que espero,<br>
+en las sonrisas que guardo,<br>
+en los recuerdos que aún no existen<br>
+pero que ya quiero vivir contigo.<br><br>
+
+Si algún día me preguntan<br>
+cuándo empezó todo,<br>
+diré que comenzó en el instante<br>
+en que tu mirada encontró la mía.<br><br>
+
+Y desde entonces,<br>
+cada capítulo tiene sentido.<br><br>
+
+Porque la historia más bonita<br>
+siempre serás tú. ♥
 
 </div>
 
@@ -214,44 +318,40 @@ Si el mundo se detuviera ahora, elegiría mirarte.
 
 <script>
 
-function openLetter(){
-document.body.classList.add("open");
-spawnFlowers();
-spawnHearts();
+// estrellas
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*3+"s";
+
+document.getElementById("stars").appendChild(star);
+
 }
 
-function spawnFlowers(){
-const f=["🌸","🌺","🌷","🌼"];
-for(let i=0;i<50;i++){
-let el=document.createElement("div");
-el.className="flower";
-el.innerHTML=f[Math.floor(Math.random()*f.length)];
-el.style.left=Math.random()*100+"vw";
-el.style.fontSize=(Math.random()*18+10)+"px";
-el.style.animationDuration=(Math.random()*6+6)+"s";
-document.body.appendChild(el);
-setTimeout(()=>el.remove(),12000);
-}
+let current=0;
+
+const chapters=document.querySelectorAll(".chapter");
+
+function nextChapter(){
+
+chapters[current].classList.remove("active");
+
+current++;
+
+if(current<chapters.length){
+
+chapters[current].classList.add("active");
+
 }
 
-function spawnHearts(){
-for(let i=0;i<70;i++){
-setTimeout(()=>{
-let h=document.createElement("div");
-h.innerHTML="❤";
-h.style.position="absolute";
-h.style.left=Math.random()*100+"vw";
-h.style.fontSize=(Math.random()*22+10)+"px";
-h.style.color="#ff2e6e";
-h.style.animation="float 6s linear forwards";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),8000);
-},i*40);
-}
-}
-
-function music(){
-window.open("https://youtu.be/8cKvvmPwgP4","_blank");
 }
 
 </script>
