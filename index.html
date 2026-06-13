@@ -1,216 +1,100 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Tatiana ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- ⭐ ESTRELLAS DE FONDO -->
+<div id="stars"></div>
 
 <style>
-
-body{
-margin:0;
-height:100vh;
-overflow:hidden;
-background:#0b0b10;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Poppins;
-color:white;
-}
-
-/* glow suave */
-.glow{
+/* estrellas */
+.star{
 position:absolute;
-width:700px;
-height:700px;
-background:#ff3b7a;
-filter:blur(240px);
-opacity:.18;
+width:2px;
+height:2px;
+background:white;
 border-radius:50%;
+opacity:.6;
+animation:twinkle 3s infinite;
 }
 
-/* flores */
+@keyframes twinkle{
+50%{opacity:.1;}
+}
+
+/* fondo movimiento suave */
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:radial-gradient(circle at center,rgba(255,50,120,0.15),transparent 60%);
+animation:pulse 6s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.1); opacity:.7;}
+}
+
+/* flores capas */
 .flower{
 position:absolute;
-font-size:22px;
-animation:floatFlower 8s linear infinite;
-opacity:.8;
+font-size:20px;
+opacity:.85;
+animation:floatFlower linear infinite;
+filter:drop-shadow(0 0 6px rgba(255,80,120,.4));
 }
 
 @keyframes floatFlower{
-0%{transform:translateY(0) rotate(0); opacity:0;}
-10%{opacity:1;}
-100%{transform:translateY(-120vh) rotate(360deg); opacity:0;}
+0%{transform:translateY(0) rotate(0);}
+100%{transform:translateY(-120vh) rotate(360deg);}
 }
 
-/* sobre */
-.envelope{
-width:260px;
-height:180px;
-background:#ff3b7a;
-position:relative;
-cursor:pointer;
-transition:1s;
-box-shadow:0 0 40px rgba(255,0,100,.3);
-}
-
-.envelope:before,
-.envelope:after{
-content:"";
-position:absolute;
-border-style:solid;
-}
-
-.envelope:before{
-border-width:0 130px 90px 130px;
-border-color:transparent transparent #ff5c93 transparent;
-top:0;
-left:0;
-}
-
-.envelope:after{
-border-width:90px 130px 0 130px;
-border-color:#ff2e6e transparent transparent transparent;
-bottom:0;
-left:0;
-}
-
-/* carta */
+/* carta mejora visual */
 .letter{
-position:absolute;
-width:340px;
-max-height:520px;
-overflow:auto;
-background:white;
-color:#111;
-padding:25px;
-border-radius:12px;
-transform:translateY(50px);
-opacity:0;
-transition:1.2s;
-box-shadow:0 20px 60px rgba(0,0,0,.5);
+box-shadow:0 30px 80px rgba(0,0,0,.6);
+backdrop-filter:blur(2px);
 }
 
-/* abrir */
-.open .envelope{
-transform:scale(0.7) translateY(-120px);
-opacity:0;
+/* sobre más “premium” */
+.envelope{
+border-radius:6px;
+transform-style:preserve-3d;
 }
 
-.open .letter{
-transform:translateY(-40px);
-opacity:1;
+/* corazones más suaves */
+.heart{
+opacity:.8;
+filter:blur(0.2px);
 }
-
-/* título */
-.title{
-font-family:'Great Vibes';
-font-size:2.8rem;
-text-align:center;
-color:#ff2e6e;
-}
-
-/* poema */
-.poem{
-margin-top:15px;
-font-size:0.95rem;
-line-height:1.6;
-text-align:center;
-}
-
-/* botón play */
-.btn{
-margin-top:20px;
-width:100%;
-padding:14px;
-border:none;
-border-radius:25px;
-background:#ff2e6e;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
 </style>
-</head>
-
-<body>
-
-<div class="glow"></div>
-
-<!-- flores alrededor -->
-<div class="flower" style="left:5%">🌸</div>
-<div class="flower" style="left:15%; animation-delay:1s">🌺</div>
-<div class="flower" style="left:25%; animation-delay:2s">🌸</div>
-<div class="flower" style="left:70%; animation-delay:1.5s">🌷</div>
-<div class="flower" style="left:85%; animation-delay:3s">🌺</div>
-<div class="flower" style="left:50%; animation-delay:2.5s">🌸</div>
-
-<div id="container">
-
-<!-- SOBRE -->
-<div class="envelope" onclick="openLetter()"></div>
-
-<!-- CARTA -->
-<div class="letter">
-
-<div class="title">Tatiana</div>
-
-<div class="poem">
-
-Tatiana,<br><br>
-
-No sé en qué momento exacto empezaste a significar tanto,<br>
-pero sí sé que ahora eres una de esas presencias que no pesan,<br>
-pero lo cambian todo.<br><br>
-
-Hay personas que pasan por la vida sin dejar ruido.<br>
-Y hay otras que dejan algo más raro:<br>
-una calma difícil de explicar.<br><br>
-
-Tú eres de esas.<br><br>
-
-No eres un pensamiento que se va,<br>
-eres uno que vuelve sin pedir permiso.<br><br>
-
-Si el mundo fuera más honesto,<br>
-diría que hay cosas que no deberían explicarse,<br>
-solo sentirse.<br><br>
-
-Y tú eres exactamente eso.<br><br>
-
-No prometo eternidades,<br>
-pero sí instantes que valen más que cualquier promesa.<br><br>
-
-Si alguna vez dudas del valor de lo que eres,<br>
-recuerda esto:<br>
-hay alguien que te piensa en silencio,<br>
-con una calma que no se fuerza.<br><br>
-
-❤️
-</div>
-
-<button class="btn" onclick="playMusic()">
-🎵 Reproducir canción
-</button>
-
-</div>
-
-</div>
 
 <script>
 
-function openLetter(){
-document.body.classList.add("open");
-
-for(let i=0;i<80;i++){
-setTimeout(createHeart,i*60);
+/* ⭐ ESTRELLAS */
+function createStars(){
+for(let i=0;i<60;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(s);
 }
 }
+createStars();
 
+/* 🌸 FLORES DINÁMICAS (más vida) */
+function createFlower(){
+let f=document.createElement("div");
+const flowers=["🌸","🌺","🌷","🌼"];
+f.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+f.className="flower";
+f.style.left=Math.random()*100+"vw";
+f.style.fontSize=(Math.random()*18+12)+"px";
+f.style.animationDuration=(Math.random()*8+6)+"s";
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),12000);
+}
+setInterval(createFlower,800);
+
+/* ❤️ CORAZONES MÁS SUAVES */
 function createHeart(){
 let h=document.createElement("div");
 h.innerHTML="❤";
@@ -218,19 +102,14 @@ h.style.position="absolute";
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(Math.random()*22+10)+"px";
 h.style.color="#ff3b7a";
-h.style.animation="floatFlower 6s linear forwards";
+h.style.animation="floatFlower 7s linear forwards";
+h.style.opacity="0.8";
 
 document.body.appendChild(h);
-
-setTimeout(()=>h.remove(),8000);
+setTimeout(()=>h.remove(),9000);
 }
 
-function playMusic(){
-window.open("https://youtu.be/8cKvvmPwgP4","_blank");
-}
+/* mantener ritmo suave */
+setInterval(createHeart,500);
 
 </script>
-
-</body>
-</html>
-</html>
